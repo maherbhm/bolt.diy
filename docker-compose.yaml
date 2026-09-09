@@ -7,9 +7,6 @@ services:
       target: bolt-ai-production
     ports:
       - '5173:5173'
-    env_file: 
-      - '.env'
-      - '.env.local'
     environment:
       - NODE_ENV=production
       - COMPOSE_PROFILES=production
@@ -41,9 +38,6 @@ services:
       context: .
       dockerfile: Dockerfile
       target: development
-    env_file: 
-      - '.env'
-      - '.env.local'
     environment:
       - NODE_ENV=development
       - VITE_HMR_PROTOCOL=ws

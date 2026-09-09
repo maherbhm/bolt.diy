@@ -32,10 +32,6 @@ RUN NODE_OPTIONS=--max-old-space-size=4096 pnpm run build
 # ---- production dependencies stage ----
 FROM build AS prod-deps
 
-# Keep only production deps for runtime
-RUN pnpm prune --prod --ignore-scripts
-
-
 # ---- production stage ----
 FROM prod-deps AS bolt-ai-production
 WORKDIR /app

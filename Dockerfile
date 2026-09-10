@@ -39,6 +39,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=5173
 ENV HOST=0.0.0.0
+RUN npm install -g wrangler
 
 # Non-sensitive build arguments
 ARG VITE_LOG_LEVEL=debug
